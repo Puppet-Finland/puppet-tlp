@@ -1,0 +1,10 @@
+{
+  "name": "puppetfinland-tlp",
+  "version": "0.1.0",
+  "author": "Puppet-Finland team",
+  "license": "BSD license",
+  "summary": "Setup tlp",
+  "source": "https://github.com/Puppet-Finland/puppet-tlp.git",
+  "project_page": "https://github.com/Puppet-Finland/puppet-tlp",
+  "dependencies": [ ]
+}
