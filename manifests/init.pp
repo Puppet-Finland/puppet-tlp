@@ -32,5 +32,19 @@ if $manage {
     class { '::tlp::install':
         ensure => $ensure,
     }
+
+    $manufacturer = $::facts['dmi']['manufacturer']
+    $chassis = $::facts['dmi']['chassis']['type']
+
+    if $manufacturer == 'LENOVO' and $chassis == 'Notebook' {
+        class { '::tlp::install::thinkpad':
+            ensure => $ensure,
+        }
+
+        class { '::tlp::config::thinkpad':
+            ensure => $ensure,
+        }
+
+    }
 }
 }

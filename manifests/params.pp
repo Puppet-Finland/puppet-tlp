@@ -5,6 +5,8 @@
 #
 class tlp::params {
 
+    include ::os::params
+
     $codename = $facts['os']['distro']['codename']
 
     case $codename  {
