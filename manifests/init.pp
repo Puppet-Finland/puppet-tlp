@@ -33,10 +33,7 @@ if $manage {
         ensure => $ensure,
     }
 
-    $manufacturer = $::facts['dmi']['manufacturer']
-    $chassis = $::facts['dmi']['chassis']['type']
-
-    if $manufacturer == 'LENOVO' and $chassis == 'Notebook' {
+    if $::manufacturer == 'LENOVO' and $::type == 'Notebook' {
         class { '::tlp::install::thinkpad':
             ensure => $ensure,
         }

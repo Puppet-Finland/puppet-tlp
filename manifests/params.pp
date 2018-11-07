@@ -7,7 +7,7 @@ class tlp::params {
 
     include ::os::params
 
-    $codename = $facts['os']['distro']['codename']
+    $codename = $::lsbdistcodename
 
     case $codename  {
         'TwentyFive': {
