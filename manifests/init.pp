@@ -33,7 +33,14 @@ if $manage {
         ensure => $ensure,
     }
 
-    if $::manufacturer == 'LENOVO' and $::type == 'Notebook' {
+    # The (chassis) type fact has been shuffled around - work around it
+    if $::type {
+        $chassis_type = $::type
+    } else {
+        $chassis_type = $facts['dmi']['chassis']['type']
+    }
+
+    if $::manufacturer == 'LENOVO' and $chassis_type == 'Notebook' {
         class { '::tlp::install::thinkpad':
             ensure => $ensure,
         }
