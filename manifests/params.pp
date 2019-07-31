@@ -14,7 +14,7 @@ class tlp::params {
             $base_packages = ['tlp','tlp-rdw']
             $thinkpad_packages = ['akmod-tp_smapi','akmod-acpi_call','kernel-devel']
         }
-        /(jessie|stretch|xenial)/: {
+        /(jessie|stretch|xenial|buster)/: {
             $base_packages = ['tlp','tlp-rdw']
             $thinkpad_packages = ['tp-smapi-dkms', 'acpi-call-dkms']
         }
