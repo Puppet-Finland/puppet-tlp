@@ -10,7 +10,7 @@ class tlp::params {
     $codename = $::lsbdistcodename
 
     case $codename  {
-        /(TwentyFive|TwentyNine)/: {
+        /(TwentyFive|TwentyNine|Thirty)/: {
             $base_packages = ['tlp','tlp-rdw']
             $thinkpad_packages = ['akmod-tp_smapi','akmod-acpi_call','kernel-devel']
         }
