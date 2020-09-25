@@ -10,11 +10,11 @@ class tlp::params {
     $codename = $::lsbdistcodename
 
     case $codename  {
-        /(TwentyFive|TwentyNine|Thirty)/: {
+        /(TwentyFive|TwentyNine|Thirty|ThirtyTwo)/: {
             $base_packages = ['tlp','tlp-rdw']
             $thinkpad_packages = ['akmod-tp_smapi','akmod-acpi_call','kernel-devel']
         }
-        /(jessie|stretch|xenial|buster)/: {
+        /(jessie|stretch|xenial|buster|bionic|focal)/: {
             $base_packages = ['tlp','tlp-rdw']
             $thinkpad_packages = ['tp-smapi-dkms', 'acpi-call-dkms']
         }
