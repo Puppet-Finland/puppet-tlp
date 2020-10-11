@@ -13,11 +13,11 @@ class tlp::install::thinkpad
     if $::operatingsystem == 'Fedora' {
         package { 'rpmfusion-free-release':
             ensure => 'present',
-            source => "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-${facts['os']['release']['full']}.noarch.rpm",
+            source => "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-${facts['os']['release']['major']}.noarch.rpm",
         }
         package { 'tlp-release':
             ensure  => 'present',
-            source  => "http://repo.linrunner.de/fedora/tlp/repos/releases/tlp-release.fc${facts['os']['release']['full']}.noarch.rpm",
+            source  => "http://repo.linrunner.de/fedora/tlp/repos/releases/tlp-release.fc${facts['os']['release']['major']}.noarch.rpm",
             require => Package['rpmfusion-free-release'],
         }
         $package_require = Package['tlp-release']
